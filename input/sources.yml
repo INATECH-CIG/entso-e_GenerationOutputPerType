@@ -1,0 +1,104 @@
+#
+# Open Power System Data
+#
+# Time series Datapackage
+#
+# sources.yml : Parameters required for downloading and parsing data from sources
+#
+eurostat energy balances:
+    Energy Balances in the MS Excel file format:
+        host: 'eu'
+        port: 2
+        path: 
+        filename: '{u_start.year}_{u_start.month}_AggregatedGenerationPerType.csv'
+        frequency: monthly
+        start: 2014-12-01
+        end: recent
+        filetype: csv
+        web: https://ec.europa.eu/eurostat/web/energy/data/energy-balances
+        cols:
+            DateTime: timestamp
+            ResolutionCode: resolution
+            AreaName: region
+            ProductionType: variable
+            ActualGenerationOutput: generation_actual 
+            # not used: 'ActualConsumption'
+        variable_type:
+            Anthracite: hard_coal 
+            Coking coal: hard_coal
+            Other bituminous coal: hard_coal
+            Sub-bituminous coal: hard_coal
+            Lignite: lignite 
+            Patent fuel: other_fossil
+            Coke oven coke: hard_coal
+            Gas coke: hard_coal
+            Coal tar: hard_coal
+            Brown coal briquettes: lignite
+            
+            Gas works gas: gas
+            Coke oven gas: gas
+            Blast furnace gas: gas
+            Other recovered gases: gas
+
+            Peat: other_fossil
+            Peat products: other_fossil
+            
+            Oil shale and oil sands: oil
+            
+            Crude oil: oil
+            Natural gas liquids: oil
+            Refinery feedstocks: other_fossil
+            #Additives and oxygenates (excluding biofuel portion):
+            Other hydrocarbons: other_fossil
+            Refinery gas: other_fossil
+            Ethane: other_fossil
+            Liquefied petroleum gases: other_fossil
+            Motor gasoline (excluding biofuel portion): other_fossil
+            Aviation gasoline: other_fossil
+            Gasoline-type jet fuel: other_fossil
+            #Kerosene-type jet fuel (excluding biofuel portion):
+            Other kerosene: other_fossil
+            Naphtha: other_fossil
+            #Gas oil and diesel oil (excluding biofuel portion):
+            Fuel oil: oil
+            White spirit and special boiling point industrial spirits: other_fossil
+            Lubricants: other_fossil
+            Bitumen: 
+            Petroleum coke: other_fossil
+            Paraffin waxes: other_fossil
+            Other oil products: oil
+            
+            Natural gas: gas
+            
+            Hydro: hydro
+            Tide, wave, ocean: marine
+            Wind: wind
+            Solar photovoltaic: solar
+            Solar thermal: solar
+            Geothermal: geothermal
+            Primary solid biofuels: other_renewable
+            Charcoal: other_renewable
+            Biogases: biomass
+            Renewable municipal waste: other_renewable
+            Pure biogasoline: other_renewable
+            Blended biogasoline: other_renewable
+            Pure biodiesels: other_renewable
+            Blended biodiesels: other_renewable
+            Pure bio jet kerosene: other_renewable
+            Blended bio jet kerosene: other_renewable
+            Other liquid biofuels: other_renewable
+            Ambient heat (heat pumps): other_renewable
+            
+            Industrial waste (non-renewable): waste
+            Non-renewable municipal waste: waste
+            
+            Nuclear heat: nuclear
+
+        stacked:
+            - region
+            - variable  ##ProductionType_Name
+        unstacked: attribute
+        append_headers:
+            source: ENTSO-E Transparency
+            web: https://transparency.entsoe.eu/generation/r2/actualGenerationPerProductionType/show
+            unit: MW
