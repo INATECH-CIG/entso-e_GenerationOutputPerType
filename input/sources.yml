@@ -43,12 +43,12 @@ eurostat energy balances:
             Peat: other_fossil
             Peat products: other_fossil
             
-            Oil shale and oil sands: oil
+            Oil shale and oil sands: other_fossil
             
             Crude oil: oil
             Natural gas liquids: oil
             Refinery feedstocks: other_fossil
-            #Additives and oxygenates (excluding biofuel portion):
+            Additives and oxygenates (excluding biofuel portion): other_fossil
             Other hydrocarbons: other_fossil
             Refinery gas: other_fossil
             Ethane: other_fossil
@@ -56,14 +56,14 @@ eurostat energy balances:
             Motor gasoline (excluding biofuel portion): other_fossil
             Aviation gasoline: other_fossil
             Gasoline-type jet fuel: other_fossil
-            #Kerosene-type jet fuel (excluding biofuel portion):
+            Kerosene-type jet fuel (excluding biofuel portion): other_fossil
             Other kerosene: other_fossil
             Naphtha: other_fossil
-            #Gas oil and diesel oil (excluding biofuel portion):
-            Fuel oil: oil
+            Gas oil and diesel oil (excluding biofuel portion): other_fossil
+            Fuel oil: other_fossil
             White spirit and special boiling point industrial spirits: other_fossil
             Lubricants: other_fossil
-            Bitumen: 
+            Bitumen: other_fossil
             Petroleum coke: other_fossil
             Paraffin waxes: other_fossil
             Other oil products: oil
@@ -71,11 +71,11 @@ eurostat energy balances:
             Natural gas: gas
             
             Hydro: hydro
-            Tide, wave, ocean: marine
+            Tide, wave, ocean: other_renewable
             Wind: wind
             Solar photovoltaic: solar
             Solar thermal: solar
-            Geothermal: geothermal
+            Geothermal: other_renewable
             Primary solid biofuels: other_renewable
             Charcoal: other_renewable
             Biogases: biomass
